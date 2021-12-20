@@ -1,1 +1,95 @@
+####################
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+      <title>Nucash Network</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">   
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">nucashDEX</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+    </ul>
+      <button id="login_button" class="btn btn-large btn-primary" type="submit">Connect</button>
+ </div>
+</nav>
+<div class="container">
+     <div class="row">
+         <div class="col col-md-6 offset-md-3" style="
+            margin-top: 50px;
+            background-color: black;
+            color: white;
+            padding: 15px;
+            border-radius: 20px;
+            box-shadow: 0 0 5px black;
+     ">
+             <h4>Swap</h4>
+         <div id="form">
+            <div class="swapbox" style="overflow: auto;margin: 20px 0;padding: 20px;background-color: rgb(39, 39, 39);border-radius: 20px;border: 1px solid rgb(61, 61, 61);">
+             <div class="swapbox_select token_select" style="
+                width: 50%;
+                float: left;">
+                ETH
+                 </div>
+             <div class="swapbox_select" id=from_token style=" 
+                width: 50
+                float: left;">
+             <input class="number form-control" placeholder="amount" id="from_amount">
+         </div>
+         </div>
+            <div class="swapbox" style="overflow: auto;margin: 20px 0;padding: 20px;background-color: rgb(39, 39, 39);border-radius: 20px;border: 1px solid rgb(61, 61, 61);">
+                <div class="swapbox_select token_select" style="
+                   width: 50%;
+                   float: left;">
+                     Token Select
+                    </div>
+                <div class="swapbox_select token_select" id=to_token style="
+                   width: 50;
+                   float: left;">
+                <input class="number form-control" placeholder="amount" id="to_amount">
+                </div>
+            </div>
+                <div class="swapbox">
+                    <button class="btn btn-large btn-block" id="swap_button" style="color: green;border: honeydew;background-color: honeydew;">
+                        Swap
+                    </button>
+            </div>
+         </div>    
+     </div> 
+  <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+      <div class="modal-body">
+       <p>Modal body text goes here.</p>
+       </div>
+      <div class="modal-footer">
+    </div>
+  </div>
+</div>
+
+    <script type="text/javascript" src="./main.js"></script>
+  </body>
+</html>
